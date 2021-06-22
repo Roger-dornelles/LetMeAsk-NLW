@@ -6,3 +6,5 @@ TECNOLOGIAS usadas:
 REACT.js junto com o FIREBASE.
 
 FIREBASE: usando a autenticação de usuario atraves do google ou até mesmo outro email não vinculado ao google.
+
+Para iniciar o projeto pelo terminal (VsCode ou Prompt de comando) npm start.

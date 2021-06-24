@@ -1,5 +1,4 @@
 .button{
-    margin-top:64px;
     height:50px;
     border-radius: 8PX;
     -webkit-border-radius: 8PX;
@@ -20,6 +19,12 @@
 
     img{
         margin-right: 8px;
+    }
+
+    & .outlined{
+        border:1px solid #835afd;
+        color:#835afd;
+        background-color: #fff;
     }
 
     &:not(:disabled):hover{

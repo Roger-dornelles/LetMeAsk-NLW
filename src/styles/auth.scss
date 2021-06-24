@@ -150,3 +150,34 @@ form{
         width: 100%;
     }
 }
+@media screen and (max-width:1024px){
+
+    #page-auth{
+    
+        display:block;
+        margin: 0 auto;
+        height: 100vh;
+        width: 100%;
+
+        aside{
+            padding:30px 30px;
+            img {
+                width:80%;
+            }
+        
+        }
+    
+        main{
+            margin-top: 15px;
+
+            width: 100%;
+            .main-content{
+                max-width: 99%;
+                margin-bottom: 25px;
+    
+    
+            }   
+        }
+    }
+    
+}

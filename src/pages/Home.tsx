@@ -15,12 +15,14 @@ import {Button} from '../components/Button';
 
 //contextApi
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 
 
 import { database } from '../services/firebase';
 
 export const Home = () =>{
     const { user,signInWithGoogle } =useAuth();
+    const {theme,toggleTheme} = useTheme();
     
     const history = useHistory();
     
@@ -61,7 +63,7 @@ export const Home = () =>{
     }
 
     return(
-        <div id="page-auth">
+        <div id="page-auth" className={theme}>
             <aside>
                 <img src={illustration} alt="Imagem simbolizando perguntas e respostas" />
                 <strong>Toda pergunta tem uma resposta</strong>
@@ -69,6 +71,7 @@ export const Home = () =>{
             </aside>
 
             <main>
+               <span>Alterar tema: </span> <button className="btn"onClick={toggleTheme}>{theme}</button>
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>

@@ -14,12 +14,15 @@ import logoImg from '../assets/images/logo.svg';
 // styles
 import '../styles/auth.scss';
 import {Button} from '../components/Button';
+import { useTheme } from '../hooks/useTheme';
 
 
 
 export function NewRoom(){
     const history = useHistory();
     const { user } = useAuth();
+    const { theme} = useTheme();
+    
     const [newRoom, setNewRoom] = useState('');
 
     const handleCreateRoom = async (event: FormEvent) => {
@@ -42,7 +45,7 @@ export function NewRoom(){
 
 
     return(
-        <div id="page-auth">
+        <div id="page-auth" className={theme}>
             <aside>
                 <img src={illustration} alt="Imagem simbolizando perguntas e respostas" />
                 <strong>Toda pergunta tem uma resposta</strong>

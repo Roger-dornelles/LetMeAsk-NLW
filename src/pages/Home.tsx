@@ -23,6 +23,7 @@ import { database } from '../services/firebase';
 export const Home = () =>{
     const { user,signInWithGoogle } =useAuth();
     const {theme,toggleTheme} = useTheme();
+
     
     const history = useHistory();
     
@@ -32,8 +33,6 @@ export const Home = () =>{
         if(!user){
            await signInWithGoogle();
         }
-
-
         history.push('/rooms/new');
         
     }
@@ -62,6 +61,10 @@ export const Home = () =>{
 
     }
 
+    
+    
+
+
     return(
         <div id="page-auth" className={theme}>
             <aside>
@@ -71,7 +74,9 @@ export const Home = () =>{
             </aside>
 
             <main>
-               <span>Alterar tema: </span> <button className="btn"onClick={toggleTheme}>{theme}</button>
+               <span>Alterar tema: </span> 
+               <button className="btn"onClick={toggleTheme}>{theme}</button>
+
                 <div className="main-content">
                     <img src={logoImg} alt="Letmeask" />
                     <button className="create-room" onClick={handleCreateRoom}>

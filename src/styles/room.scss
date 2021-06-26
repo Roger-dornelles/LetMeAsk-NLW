@@ -1,23 +1,73 @@
 #page-room{
-    height:100vh;
+    height:100%;
     &.dark{
         background-color: #3b3b3b;
         color: #eeeeee;
     }
-    
+
+    > b{
+        display: flex;
+        margin: 0 auto;
+        margin-top:7px;
+        justify-content: center;
+        text-align: center;
+        padding:5px 0;
+        border: radius 5px;
+        width: 40%;
+        background-color:#ff3c3c;
+        color:#000000;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        -ms-border-radius:5px;
+        -o-border-radius:5px;
+    }
     header{
+        width: 100%;
         padding:24px;
         border-bottom: 1px solid #e2e2e2;
 
-
         .content{
-
             max-width: 1120px;
             margin: 0 auto;
             display: flex;
             justify-content:space-between;
             align-items:center;
+            form{
+                margin: 12px 0;
 
+                span{
+                    margin: 0 5px;;
+                }
+                input{
+                    
+                    padding:7px 5px;
+                    border-radius:5px;
+                    -webkit-border-radius:5px;
+                    -moz-border-radius:5px;
+                    -ms-border-radius:5px;
+                    -o-border-radius:5px;
+                    border:1px solid #a1a1a1;
+                    outline:none;
+                }
+
+                button{
+                    margin:0 5px;
+                    cursor:pointer;
+                    padding:7px 10px ;
+                    background-color:#835afd;
+                    color: #fff;
+                    border: 0;
+                    border-radius:5px;
+                    -webkit-border-radius:5px;
+                    -moz-border-radius:5px;
+                    -ms-border-radius:5px;
+                    -o-border-radius:5px;
+                    &:hover{
+                        background-color: #5d28ff;
+                    }
+                }
+
+            }
 
             img{
                 max-height: 45px;
@@ -31,13 +81,18 @@
                      height:40px;
                  }
             }
+
         }
     }
 
     main {
+        display: flex;
         max-width: 800px;
         margin: 0 auto;
         flex-direction: column;
+        height: auto;
+       
+        
 
         .room-title{
             margin: 32px 0 24px;
@@ -145,6 +200,7 @@
         .question-list{
             margin-top: 32px;
             width: 100%;
+            height: 100%;
 
             > button{
                 border: 0;
@@ -173,44 +229,74 @@
 
 @media screen and (max-width:1024px) {
 
-
-    header{
-    
-        .content{
-            flex-direction: column;
-            > img{
-                margin-top:12px;
-                margin-bottom:12px;
-            }
-        }
-    }
-    main {
-        width:100%;
-        form{
-            width: 100%;
+    #page-room{
+        > b{
+            width: 95%;
         
-            
-            .form-footer{
-                width: 100%;
-                flex-direction: column;
+        }
 
-                > button{
+        header{
+            width:95%;
+        .content{
+                margin:0 auto;
+                flex-direction: column;
+                form{
+                    width: 100%;
+
+                    display:flex;
+                    flex-direction: column;
+
+                    input{
+                        width: 100%;
+                        margin-bottom: 10px;
+                        margin-top:7px;
+
+                    }
+
+                
+                }
+                >div{
+                    margin-top:15px;
                     display: flex;
-                    text-align: center;
-                    width: 75%;
-                    border: 0;
-                    color: #fefefe;
-                    text-decoration: underline;
-                    font-size: 14px;
-                    font-weight: 500;
-                    cursor:pointer;
-                    margin-top: 25px;
+                    flex-direction: column;
+                    gap:16px;
+                    
+                     button{
+                         height:40px;
+                     }
                 }
 
             }
+        }
+
+        
+        main {
+            width:95%;
+            form{
+                width: 100%;
             
+                
+                .form-footer{
+                    width: 100%;
+                    flex-direction: column;
+
+                    > button{
+                        display: flex;
+                        text-align: center;
+                        width: 75%;
+                        border: 0;
+                        color: #fefefe;
+                        text-decoration: underline;
+                        font-size: 14px;
+                        font-weight: 500;
+                        cursor:pointer;
+                        margin-top: 25px;
+                    }
+
+                }
+                
+                }
             }
         }
 
-
-}
+    }

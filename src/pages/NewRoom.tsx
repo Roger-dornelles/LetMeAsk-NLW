@@ -18,6 +18,7 @@ import { useTheme } from '../hooks/useTheme';
 
 
 
+
 export function NewRoom(){
     const history = useHistory();
     const { user } = useAuth();
@@ -39,8 +40,12 @@ export function NewRoom(){
             title:newRoom,
             authorId: user?.id
         })
+        if(user){
+            console.log(`dados user ${user?.name}`)
+         }
+        history.push(`/rooms/${firebaseRoom.key}`);
+       
 
-        history.push(`/rooms/${firebaseRoom.key}`)
     }
 
 

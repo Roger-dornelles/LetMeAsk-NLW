@@ -1,5 +1,5 @@
-import { useState,FormEvent} from 'react';
-import { useParams } from 'react-router-dom'
+import { useState,FormEvent, useEffect} from 'react';
+import { useParams,useHistory } from 'react-router-dom'
 
 import logoImg from '../assets/images/logo.svg';
 
@@ -28,6 +28,7 @@ export const Room = ()=>{
     const params = useParams<RoomParams>();
     const roomId = params.id;
     const { theme } = useTheme();
+    const history = useHistory();
     
     const {user} = useAuth();
     const {questions, title} = useRoom(roomId);
@@ -72,15 +73,46 @@ export const Room = ()=>{
             });
         }
 
+        
+
+    }
+
+    const [ name , setName ] = useState('');
+    const [error, setError] = useState('');
+    const handleUser = (event: FormEvent)=>{
+        event.preventDefault();
+
+        if (user){
+
+            if(user.name === name){    
+                history.push(`/admin/rooms/${roomId}`)
+    
+            }else{
+                setError('Usuario inexistente')
+
+                setTimeout(()=>{
+                    setError('');
+                },1700)
+            }
+        }
+
     }
 
     return (
 
         <div id="page-room" className={theme}>
+            {error && <b>{error}</b>}
             <header>
                 <div className="content">
+                    
                     <img src={logoImg} alt="letmeask" />
+                    <form onSubmit={handleUser}>
+                        <span>Administrador da sala</span>
+                        <input type="text" placeholder="Nome do Administrador" value={name} onChange={e=>setName(e.target.value)} />
+                        <button>Entrar</button>
+                    </form>
                     <RoomCode code={roomId} />
+                   
                 </div>
             </header>
 

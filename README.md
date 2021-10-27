@@ -1,6 +1,6 @@
 Projeto criado no evento da NLW trilha REACT.JS.
 
-LetMeAsk é um site onde você pode fazer uma pergunta e o criador da sala respondonde a sua pergunta em LIVE.
+LetMeAsk é um site onde você pode fazer uma pergunta e o criador da sala responde a sua pergunta em LIVE.
 
 TECNOLOGIAS usadas:
 REACT.js junto com o FIREBASE.
